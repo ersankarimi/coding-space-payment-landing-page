@@ -1,0 +1,365 @@
+// font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+
+// variabel color
+$light-purple: #E9DCFF;
+$main-color: #1E1E1E;
+$active-sidebar: #0E0E0E;
+$white-color: #FFFFFF;
+
+// my style
+body {
+    background-color: $main-color;
+    font-family: Poppins, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: $main-color;
+    padding: 1em;
+    margin-bottom: 5em;
+
+    .logo-hero {
+        img {
+            width: 100%;
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1em;
+
+
+        .menu-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .hamburger {
+                width: 48px;
+                height: 5px;
+
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 35px;
+                    height: 2px;
+                    background-color: #fff;
+                }
+
+                &::after {
+                    transform: translateY(6px);
+                    transition: all 0.5s ease-in-out;
+                }
+
+                &::before {
+                    transform: translateY(-6px);
+                    transition: all 0.5s ease-in-out;
+                }
+
+                &.is-active {
+                    &::after {
+                        transform: rotate(-135deg);
+                        transition: all 0.5s ease-in-out;
+                    }
+
+                    &::before {
+                        transform: rotate(135deg);
+                        transition: all 0.5s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .my-link {
+            display: flex;
+
+            li {
+                margin-right: 1em;
+                cursor: pointer;
+
+                a {
+                    color: $white-color;
+                    text-decoration: none;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                }
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    font: 500 1.25rem Poppins;
+
+                }
+
+                button {
+                    cursor: pointer;
+                }
+
+                &.nav-link:hover a {
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                &.nav-link:hover {
+                    background-color: #E9DCFF;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
+
+// main style
+.content {
+    display: flex;
+    padding: calc(2em - 7px);
+    margin-top: calc(3em);
+
+    .promotion {
+        margin-top: 2em;
+        color: #fff;
+
+        .uppercase {
+            text-transform: uppercase;
+            font: 500 0.875em Poppins;
+            margin-bottom: 1em;
+        }
+
+        .capitalize {
+            text-transform: capitalize;
+            font: 600 2.938em Poppins;
+            margin-bottom: 1.25em;
+        }
+
+        .get-app {
+            width: 151px;
+            height: 53px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $main-color;
+            font: 700 1.25rem Poppins;
+            border-radius: 8px;
+            background-color: $light-purple;
+
+            span {
+                margin-right: .25em;
+            }
+        }
+    }
+
+    .hero-img {
+        width: 100vw;
+        height: auto;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    header {
+        nav {
+            padding: .5em 2em;
+
+            .my-link {
+                li {
+                    button {
+                        &.log-in[type="button"] {
+                            margin-left: 10em;
+                        }
+
+                        &.sign-in[type="button"] {
+                            margin-right: 10em;
+                        }
+                    }
+
+                    &.nav-link {
+                        margin: 0 1em;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        padding: 2em;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    header {
+        nav {
+            justify-content: space-between;
+            align-items: center;
+
+            // hide hamburger menu
+            .menu-toggle {
+                display: none;
+            }
+
+            .my-link {
+                align-items: center;
+
+                li {
+                    padding: .5em;
+
+                    a {
+                        font: 500 1rem Poppins;
+                    }
+
+                    button {
+                        width: 80px;
+                        height: 30px;
+                        border-radius: 8px;
+                        background-color: $light-purple;
+                        border: transparent;
+
+                        &.log-in {
+                            margin-left: 1em;
+                        }
+
+                        &.sign-in {
+                            margin-right: 1em;
+                        }
+
+                        &:hover {
+                            background-color: darken($color:$light-purple, $amount: 5%);
+                            color: darken($color: #000, $amount: 10%);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .hero-img {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        nav {
+            padding: 0 2em;
+
+            .my-link {
+                width: 100vw;
+                height: 100vh;
+                flex-direction: column;
+                position: absolute;
+                top: 58px;
+                width: 100vw;
+                left: -1000px;
+                margin-top: 32px;
+                transition: all 0.5s ease-in-out;
+
+                li {
+                    padding: .65em;
+                    margin-bottom: .75em;
+                    width: 85vw;
+
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        color: #fff;
+                        font-size: 1.25rem;
+                        font: 500 1.25rem Poppins;
+                        padding: 0;
+                    }
+
+                    &:hover button {
+                        color: #000;
+                        background-color: #E9DCFF;
+                        border-radius: 8px;
+                    }
+
+                    &:hover a {
+                        color: #000;
+                        text-decoration: none;
+                    }
+
+                    &:hover {
+                        background-color: #E9DCFF;
+                        border-radius: 8px;
+                    }
+                }
+
+                &.active {
+                    left: .5em;
+                    background-color: $active-sidebar;
+                }
+            }
+        }
+    }
+
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .hero-img {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 568px) {
+    header {
+        nav {
+            padding: 0 1em;
+
+            .my-link {
+                width: 100vw;
+                height: 100vh;
+                flex-direction: column;
+                position: absolute;
+                top: 58px;
+                width: 100vw;
+                left: -1000px;
+                margin-top: 16px;
+                transition: all 0.5s ease-in-out;
+
+                li {
+                    padding: .65em;
+                    margin-bottom: .75em;
+                    width: 85vw;
+
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        color: #fff;
+                        font-size: 1.25rem;
+                        font: 500 1.25rem Poppins;
+                        padding: 0;
+                    }
+                }
+
+                &.active {
+                    left: .5em;
+                    background-color: $active-sidebar;
+                }
+            }
+        }
+    }
+
+    .content {
+        flex-direction: column;
+
+    }
+}

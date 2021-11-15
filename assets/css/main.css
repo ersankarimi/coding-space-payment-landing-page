@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+body {
+  background-color: #1E1E1E;
+  font-family: Poppins, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #1E1E1E;
+  padding: 1em;
+  margin-bottom: 5em;
+}
+
+header .logo-hero img {
+  width: 100%;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1em;
+}
+
+header nav .menu-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+header nav .menu-toggle .hamburger {
+  width: 48px;
+  height: 5px;
+}
+
+header nav .menu-toggle .hamburger::after, header nav .menu-toggle .hamburger::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+}
+
+header nav .menu-toggle .hamburger::after {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header nav .menu-toggle .hamburger::before {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header nav .menu-toggle .hamburger.is-active::after {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header nav .menu-toggle .hamburger.is-active::before {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header nav .my-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav .my-link li {
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+header nav .my-link li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+header nav .my-link li a {
+  color: #fff;
+  text-decoration: none;
+  font: 500 1.25rem Poppins;
+}
+
+header nav .my-link li button {
+  cursor: pointer;
+}
+
+header nav .my-link li.nav-link:hover a {
+  color: #000;
+  text-decoration: none;
+}
+
+header nav .my-link li.nav-link:hover {
+  background-color: #E9DCFF;
+  border-radius: 8px;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: calc(2em - 7px);
+  margin-top: calc(3em);
+}
+
+.content .promotion {
+  margin-top: 2em;
+  color: #fff;
+}
+
+.content .promotion .uppercase {
+  text-transform: uppercase;
+  font: 500 0.875em Poppins;
+  margin-bottom: 1em;
+}
+
+.content .promotion .capitalize {
+  text-transform: capitalize;
+  font: 600 2.938em Poppins;
+  margin-bottom: 1.25em;
+}
+
+.content .promotion .get-app {
+  width: 151px;
+  height: 53px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #1E1E1E;
+  font: 700 1.25rem Poppins;
+  border-radius: 8px;
+  background-color: #E9DCFF;
+}
+
+.content .promotion .get-app span {
+  margin-right: .25em;
+}
+
+.content .hero-img {
+  width: 100vw;
+  height: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+@media screen and (min-width: 992px) {
+  header nav {
+    padding: .5em 2em;
+  }
+  header nav .my-link li button.log-in[type="button"] {
+    margin-left: 10em;
+  }
+  header nav .my-link li button.sign-in[type="button"] {
+    margin-right: 10em;
+  }
+  header nav .my-link li.nav-link {
+    margin: 0 1em;
+  }
+  .content {
+    padding: 2em;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header nav .menu-toggle {
+    display: none;
+  }
+  header nav .my-link {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header nav .my-link li {
+    padding: .5em;
+  }
+  header nav .my-link li a {
+    font: 500 1rem Poppins;
+  }
+  header nav .my-link li button {
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #E9DCFF;
+    border: transparent;
+  }
+  header nav .my-link li button.log-in {
+    margin-left: 1em;
+  }
+  header nav .my-link li button.sign-in {
+    margin-right: 1em;
+  }
+  header nav .my-link li button:hover {
+    background-color: #d9c3ff;
+    color: black;
+  }
+  .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .content .hero-img {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header nav {
+    padding: 0 2em;
+  }
+  header nav .my-link {
+    width: 100vw;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 58px;
+    width: 100vw;
+    left: -1000px;
+    margin-top: 32px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  header nav .my-link li {
+    padding: .65em;
+    margin-bottom: .75em;
+    width: 85vw;
+  }
+  header nav .my-link li button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+    font: 500 1.25rem Poppins;
+    padding: 0;
+  }
+  header nav .my-link li:hover button {
+    color: #000;
+    background-color: #E9DCFF;
+    border-radius: 8px;
+  }
+  header nav .my-link li:hover a {
+    color: #000;
+    text-decoration: none;
+  }
+  header nav .my-link li:hover {
+    background-color: #E9DCFF;
+    border-radius: 8px;
+  }
+  header nav .my-link.active {
+    left: .5em;
+    background-color: #0E0E0E;
+  }
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .content .hero-img {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  header nav {
+    padding: 0 1em;
+  }
+  header nav .my-link {
+    width: 100vw;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 58px;
+    width: 100vw;
+    left: -1000px;
+    margin-top: 16px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  header nav .my-link li {
+    padding: .65em;
+    margin-bottom: .75em;
+    width: 85vw;
+  }
+  header nav .my-link li button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+    font: 500 1.25rem Poppins;
+    padding: 0;
+  }
+  header nav .my-link.active {
+    left: .5em;
+    background-color: #0E0E0E;
+  }
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=main.css.map */
